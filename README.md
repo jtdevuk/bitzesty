@@ -48,7 +48,7 @@ Using Google maps *static* image api, display address on a map on the hospital s
 API Key `Rails.application.credentials.google_maps_api` is set but limited to localhost URL.
 Do not need to place a pin
 
-## 7. Extract hospital website URL (15 mins)
+<!-- ## 7. Extract hospital website URL (15 mins)
 
 The hospital url at the moment is the NHS show page url, we would like to display the
-real hospital URL (which is located on the NHS hospital show page, top of the page and in the details section).
+real hospital URL (which is located on the NHS hospital show page, top of the page and in the details section). -->
