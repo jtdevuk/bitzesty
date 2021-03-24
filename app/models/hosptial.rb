@@ -1,0 +1,2 @@
+class Hosptial < ApplicationRecord
+end

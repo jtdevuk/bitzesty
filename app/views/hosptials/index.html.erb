@@ -1,0 +1,40 @@
+<div class="container">
+<h1> A&E Hosptials</h1>
+
+  <%= form_tag(hosptials_path, method: :get, class: 'form-inline') do %>
+    <div class="form-row align-items-center">
+      <div class="col-auto">
+      <%= text_field_tag :postcode, nil, class: 'form-control', placeholder: 'Postcode' %>
+      </div>
+    <div class="col-auto">
+    <%= submit_tag 'Search', class: "btn btn-primary" %>
+    </div>
+    </div>
+  <% end %>
+</div>
+<div class="container">
+<h2><%= @hosptials.count %> Results</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Tel</th>
+      <th>Address</th>
+      <th>Website</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hosptials.each do |hosptial| %>
+      <tr>
+        <td><%= hosptial.name %></td>
+        <td><%= hosptial.tel %></td>
+        <td><%= hosptial.address %></td>
+        <td><%= hosptial.website %></td>
+        <td><%= link_to 'Show', hosptial %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

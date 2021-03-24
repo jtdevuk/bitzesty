@@ -1,0 +1,2 @@
+module HosptialsHelper
+end
