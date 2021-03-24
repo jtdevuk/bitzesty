@@ -7,7 +7,7 @@
 <% else %>
 <p>Hello <%= current_user.email %>
 <ul>
-  <li><%= link_to "Log out", destroy_user_session_path %></li>
+  <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
 </ul>
 
 <div class="card">
