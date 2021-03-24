@@ -1,7 +1,7 @@
 <div class="container">
-<h1> A&E Hosptials</h1>
+<h1> A&E Hospitals</h1>
 
-  <%= form_tag(hosptials_path, method: :get, class: 'form-inline') do %>
+  <%= form_tag(hospitals_path, method: :get, class: 'form-inline') do %>
     <div class="form-row align-items-center">
       <div class="col-auto">
       <%= text_field_tag :postcode, nil, class: 'form-control', placeholder: 'Postcode' %>
@@ -13,7 +13,7 @@
   <% end %>
 </div>
 <div class="container">
-<h2><%= @hosptials.count unless @hosptials.nil? %> Results</h2>
+<h2><%= @hospital.count unless @hospital.nil? %> Results</h2>
 <table>
   <thead>
     <tr>
@@ -26,14 +26,14 @@
   </thead>
 
   <tbody>
-    <% unless @hosptials.nil? %>
-      <% @hosptials.each do |hosptial| %>
+    <% unless @hospital.nil? %>
+      <% @hospital.each do |hosptial| %>
         <tr>
-          <td><%= hosptial.name %></td>
-          <td><%= hosptial.tel %></td>
-          <td><%= hosptial.address %></td>
-          <td><%= hosptial.website %></td>
-          <td><%= link_to 'Show', hosptial %></td>
+          <td><%= hospital.name %></td>
+          <td><%= hospital.tel %></td>
+          <td><%= hospital.address %></td>
+          <td><%= hospital.website %></td>
+          <td><%= link_to 'Show', hospital %></td>
         </tr>
       <% end %>
     <% end %>
