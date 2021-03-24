@@ -3,7 +3,7 @@ class HospitalsController < ApplicationController
   before_action :set_hospitals
 
   def index
-    if params[:postcode].present?
+    if params[:postcode].present? && is_valid_postcode?(params[:postcode])   
       @hospitals = ::NhsSearch.new.ae_by_postcode(params[:postcode])
     else
       @hospitals = Hospital.all 
@@ -20,6 +20,10 @@ class HospitalsController < ApplicationController
 
   def ratings
     # TODO return ratings
+  end
+
+  def is_valid_postcode?(postcode)
+    !!(postcode =~ /^\s*((GIR\s*0AA)|((([A-PR-UWYZ][0-9]{1,2})|(([A-PR-UWYZ][A-HK-Y][0-9]{1,2})|(([A-PR-UWYZ][0-9][A-HJKSTUW])|([A-PR-UWYZ][A-HK-Y][0-9][ABEHMNPRVWXY]))))\s*[0-9][ABD-HJLNP-UW-Z]{2}))\s*$/i)
   end
 
   private

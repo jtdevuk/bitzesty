@@ -13,7 +13,7 @@
   <% end %>
 </div>
 <div class="container">
-<h2><%= @hospital.count unless @hospital.nil? %> Results</h2>
+<h2><%= @hospitals.count unless @hospitals.nil? %> Results</h2>
 <table>
   <thead>
     <tr>
@@ -26,8 +26,8 @@
   </thead>
 
   <tbody>
-    <% unless @hospital.nil? %>
-      <% @hospital.each do |hosptial| %>
+    <% unless @hospitals.nil? %>
+      <% @hospitals.each do |hospital| %>
         <tr>
           <td><%= hospital.name %></td>
           <td><%= hospital.tel %></td>

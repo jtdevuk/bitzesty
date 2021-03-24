@@ -21,7 +21,7 @@ class NhsSearch
         tel = hospital.xpath(".//p[@class='fctel']").first&.text
         address = hospital.xpath(".//p[@class='fcaddress']").first&.text
         # TODO extract hospital timetable details and store them in a new model.
-        Hosptial.find_or_create_by(name: name, tel: tel, address: address, website: nhsurl)
+        Hospital.find_or_create_by(name: name, tel: tel, address: address, website: nhsurl)
       end
     end
 end
